@@ -1,0 +1,48 @@
+<div class="background">
+    <div id="mydivon" style="display:block">
+        <div class="text">
+            <h1>Login..</h1>
+            <p>No Account? <a [routerLink]="['/signup']" onmousedown="toggleDiv('mydiv');">Signup</a></p>
+        </div>
+        <div class="box">
+            <form class="form"  #logForm="ngForm">
+                <input class="input-field" type="text" placeholder="Email" name="userId" id="userId" ngModel>
+                <input class="input-field" type="password" placeholder="Password" name="password" id="password" ngModel>
+                <button type="submit" (click)="gotoLogin(logForm.value)" class="btn">Login</button>
+            </form>
+        </div>
+    </div>
+    <div style="display:none">
+        <div class="text">
+            <h1>Signup..</h1>
+            <p>Have Account? <a [routerLink]="['/signup']" onmousedown="toggleDiv('mydiv');">Login</a></p>
+        </div>
+        <div class="box1">
+            <!-- <form class="form" #regForm='ngForm' (ngSubmit)="Register2(regForm)">
+                <input type="text" class="fullname" placeholder="Full Name" required ngModel>
+                <input type="email" class="email" placeholder="someone@abc.com" required ngModel>
+                <input type="text" class="username" placeholder="Username" required ngModel>
+                <input type="password" class="password" placeholder="Password" required ngModel>
+                <input type="submit" class="button" value="Login">
+            </form> -->
+        </div>
+    </div>
+</div>
+<script>
+    function toggleDiv(divid) {
+
+        varon = divid + 'on';
+        varoff = divid + 'off';
+
+        if (document.getElementById(varon).style.display == 'block') {
+            document.getElementById(varon).style.display = 'none';
+            document.getElementById(varoff).style.display = 'block';
+        }
+
+        else {
+            document.getElementById(varoff).style.display = 'none';
+            document.getElementById(varon).style.display = 'block'
+        }
+    }
+</script>
+<!-- hii-->

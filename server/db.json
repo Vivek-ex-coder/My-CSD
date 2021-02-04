@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "name": "saran",
+      "mobile": 98797,
+      "email": "vivek.vik.j1@gmail.com",
+      "password": "83duew",
+      "id": 1
+    },
+    {
+      "name": "rr",
+      "mobile": 8757599888,
+      "email": "samuc774@gmail.com",
+      "password": "rf5",
+      "id": 2
+    },
+    {
+      "name": "Sanjay",
+      "mobile": 75683545,
+      "email": "Sam@gmail.com",
+      "password": "56443",
+      "id": 10
+    },
+    {
+      "FirstName": "tom",
+      "LastName": "harry",
+      "Mobile": 6423642,
+      "Email": "tom@gmail.com",
+      "id": 11
+    }
+  ]
+}
