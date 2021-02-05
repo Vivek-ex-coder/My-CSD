@@ -12,42 +12,95 @@ import { SignupService } from 'src/app/Service/signup.service';
 export class LoginComponent implements OnInit {
 
   user!: User;
-  
+  users!: User[];
   homeIdToUpdate: any;
+  userName!:string;
+  userPassword!:string;
  
   flag: boolean = false;
-  password:string="";
+  password!:string;
 
-  constructor(private userService: SignupService, private router: Router) {
-    // this.user = new User;
-    // this.getUser();
+  constructor(private userService:SignupService, private router: Router) {
+    this.user = new User;
+    this.getUser();
   }
 
   ngOnInit(): void {
+    this.userService.getAllUser().subscribe(data  =>{
+      this.users =data;
+    });
   }
-
-  gotoLogin(goto:User) {
-    this.router.navigate(['/home']);
-    // if (goto.email !== undefined && goto.email !== null && goto.email.length > 0) 
-    // {
-        this.userService.getUserById(goto.email).subscribe((response)=>{
-          this.user = response
-          alert('login called');
+  gotoLogin() {
+    if (this.user.email !== undefined && this.user.email !== null && this.user.email.length > 0) {
+      for (let i = 0; i < this.users.length; i++) {
+        if (this.users[i].password == this.user.password && this.users[i].email == this.user.email) {
+          this.password = this.users[i].password;
+        }
+      }
+      if(this.user.password == this.password){
+        alert("LOGIN SUCCESSFUL");
           this.router.navigate(['/home']);
-          console.log(this.user);
-        });
-      } 
-    //   else {
-    //   this.flag = true;
-    //   alert("login not called");
-    // }
-  // }
+      } else {
+        alert("Please enter the correct password or email Id");
+      }
+    } else {
+      this.flag = true;
+      alert("login not called");
+    }
+  }
  
-  // getUser() {
-  //   this.userService.getAllUsers().subscribe(service => {
-  //     this.users = service;
-  //   });
-  // }
+  getUser() {
+    this.userService.getAllUser().subscribe(service => {
+      this.users = service;
+    });
+  }
 
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   gotoLogin() {
+//     if (this.user.email !== undefined && this.user.email !== null && this.user.email.length > 0) {
+//       for (let i = 0; i < this.users.length; i++) {
+//         if (this.users[i].password == this.user.password && this.users[i].email == this.user.email) {
+//           this.password = this.users[i].password;
+//         }
+//       }
+//       if(this.user.password == this.password){
+//         alert("LOGIN SUCCESSFUL");
+//           this.router.navigate(['/home']);
+//       } else {
+//         alert("Please enter the correct password or email Id");
+//       }
+//     } else {
+//       this.flag = true;
+//       alert("login not called");
+//     }
+//   }
+  
+//   getUser() {
+//     this.userService.getAllUser().subscribe(service => {
+//       this.users = service;
+//     });
+//   }
+
+// }

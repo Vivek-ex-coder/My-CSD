@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ComplainComponent } from './Component/complain/complain.component';
+import { DashboardComponent } from './Component/dashboard/dashboard.component';
 import { FeedbackComponent } from './Component/feedback/feedback.component';
 import { HomeComponent } from './Component/home/home.component';
 import { LoginComponent } from './Component/login/login.component';
@@ -28,6 +29,9 @@ const routes: Routes = [
   },
   {
     path:'signup',component:SignupComponent
+  },
+  {
+    path:'dashboard',component: DashboardComponent
   },
   {
     path:'**',component:LoginComponent

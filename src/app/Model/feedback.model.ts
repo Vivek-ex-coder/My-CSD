@@ -1,8 +1,9 @@
 export class Feedback {
 
+    id!:number;
     userName !: string ;
     contactNumber!: number ;
-    rateSevice !: number ;
+    rateService !: number ;
     suggestion!: string ;
 }
 

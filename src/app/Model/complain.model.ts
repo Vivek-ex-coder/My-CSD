@@ -1,5 +1,5 @@
 export class Complain {
-    Id!:number;
+    id!:number;
     custName !: string ;
     mail !: string ;
     productName !: string ;

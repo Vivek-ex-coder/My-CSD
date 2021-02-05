@@ -90,6 +90,17 @@
       "repair": "Replace",
       "complain": "Good",
       "id": 3
+    },
+    {
+      "custName": "Sahil",
+      "mail": "sahil@gmail.com",
+      "productName": "macBook",
+      "productId": "105",
+      "productAdress": "India",
+      "contactNumber": "876543",
+      "repair": "Replace",
+      "complain": "Broken",
+      "id": 4
     }
   ],
   "feedback": [

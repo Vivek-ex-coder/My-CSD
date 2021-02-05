@@ -30,6 +30,12 @@ export class SignupService {
     return this._http.get<Complain[]>("http://localhost:3000/complain");
   }
 
+  getComplainById(id:string){
+    return this._http.get(`http://localhost:3000/complain/${id}`);
+  }
+
+  
+
   // For Feedback Section
   
   createFeedback(feedback: Feedback){
@@ -38,4 +44,8 @@ export class SignupService {
   getAllFeedback(){
     return this._http.get<Feedback[]>("http://localhost:3000/feedback");
   }
+  getFeedbackById(id:string){
+    return this._http.get(`http://localhost:3000/feedback/${id}`);
+  }
+
 }

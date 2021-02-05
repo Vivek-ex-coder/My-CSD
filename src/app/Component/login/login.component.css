@@ -1,0 +1,22 @@
+* {
+    color: #ffffff
+}
+
+.c {
+    text-align: center
+}
+
+.bg {
+    background: url('/assets/j.jpg') no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+.form-container {
+    border: 0px solid #ffffff;
+    padding: 50px 60px;
+    margin-top: 20vh;
+    -webkit-box-shadow: -1px 4px 26px 11px rgba(28, 110, 218, 0.75);
+    box-shadow: -1px 4px 26px 11px rgba(63, 141, 204, 0.75);
+}
