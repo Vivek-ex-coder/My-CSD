@@ -9,12 +9,22 @@ import { AppComponent } from './app.component';
 import { SignupComponent } from './Component/signup/signup.component';
 import { SignupService } from './Service/signup.service';
 import { LoginComponent } from './Component/login/login.component';
+import { ComplainComponent } from './Component/complain/complain.component';
+import { FeedbackComponent } from './Component/feedback/feedback.component';
+import { MenuComponent } from './Component/menu/menu.component';
+import { HomeComponent } from './Component/home/home.component';
+import { DashboardComponent } from './Component/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    ComplainComponent,
+    FeedbackComponent,
+    MenuComponent,
+    HomeComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

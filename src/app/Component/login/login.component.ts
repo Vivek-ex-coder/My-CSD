@@ -27,11 +27,13 @@ export class LoginComponent implements OnInit {
   }
 
   gotoLogin(goto:User) {
+    this.router.navigate(['/home']);
     // if (goto.email !== undefined && goto.email !== null && goto.email.length > 0) 
     // {
         this.userService.getUserById(goto.email).subscribe((response)=>{
           this.user = response
           alert('login called');
+          this.router.navigate(['/home']);
           console.log(this.user);
         });
       } 
