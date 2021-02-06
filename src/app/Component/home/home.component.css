@@ -1,0 +1,46 @@
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 2px;
+    background-color: black;
+    color: white;
+}
+
+.a {
+    border: 2px;
+    width: 100%;
+    height: 10;
+    padding-top: 10px;
+}
+
+.laptop {
+    border: 5px solid #3bf0f01e;
+    /* padding: 0px 60px; */
+    border-width: 60px;
+}
+
+.mobile {
+    border: 5px solid #3bf0f01e;
+    /* padding: 0px 60px; */
+    border-width: 60px;
+}
+
+.tv {
+    border: 5px solid #3bf0f01e;
+    /* padding: 0px 60px; */
+    border-width: 60px;
+}
+
+.mobile-sub {
+    border: 5px solid #eeaf5c1e;
+    /* padding: 0px 60px; */
+    border-width: 60px;
+}
+
+.mobiles-a {
+    border: 0px solid rgb(141, 42, 42);
+}
