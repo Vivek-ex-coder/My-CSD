@@ -1,0 +1,28 @@
+.form-container {
+    color: aliceblue;
+    background-color: rgb(25, 110, 180);
+    border: 0px solid #ffffff;
+    padding: 1px 20px;
+    margin-top: 2px;
+    /* -webkit-box-shadow: -1px 4px 26px 11px rgba(28, 110, 218, 0.75);
+    box-shadow: -1px 4px 26px 11px rgba(63, 141, 204, 0.75); */
+}
+
+.fo {
+    color: aliceblue;
+    text-align: left;
+    margin-top: 0px;
+    padding: 0px 0px;
+}
+
+.text-1 {
+    color: aliceblue;
+    text-shadow: darkmagenta;
+}
+
+.right {
+    color: beige;
+    text-align: right;
+    text-shadow: rgb(233, 99, 10);
+    text-decoration-color: darkcyan;
+}
