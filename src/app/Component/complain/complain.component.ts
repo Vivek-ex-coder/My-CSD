@@ -22,6 +22,8 @@ export class ComplainComponent implements OnInit {
     this.signupService.createComplain(formObj).subscribe((response)=> {
     this.getLatestUser();
   });
+  alert("Complain Registered");
+  formObj.reset();
 }
 
   getLatestUser() {

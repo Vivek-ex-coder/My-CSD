@@ -26,7 +26,12 @@ export class FeedbackComponent implements OnInit {
     console.log(formObj);
     this.signupService.createFeedback(formObj).subscribe((response)=> {
     this.getLatestUser();
+    
   }) 
+  alert("Submitted Successfully");
+  // formObj.reset();
+  // document.feedbackForm.reset();
+  
  
   }
   getLatestUser() {
