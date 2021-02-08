@@ -15,6 +15,7 @@ import { MenuComponent } from './Component/menu/menu.component';
 import { HomeComponent } from './Component/home/home.component';
 import { DashboardComponent } from './Component/dashboard/dashboard.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +26,7 @@ import { DashboardComponent } from './Component/dashboard/dashboard.component';
     MenuComponent,
     HomeComponent,
     DashboardComponent
+    
   ],
   imports: [
     BrowserModule,

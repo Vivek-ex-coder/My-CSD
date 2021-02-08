@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DisplayName } from 'src/app/Model/display-name.model';
+import { SignupService } from 'src/app/Service/signup.service';
 
 @Component({
   selector: 'app-menu',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
+  navigate: any;
+  displayName!: DisplayName;
+  constructor(private userService:SignupService) { 
 
-  constructor() { }
+  }
 
   ngOnInit(): void {
-  }
+    
+    this.userService.loggedUser().subscribe(data =>{
+      this.displayName = data;
+      // alert(this.displayName);
+      // console.log(this.displayName);
+        });
+    // this.displayName = this.name.getName();
+}
 
 }

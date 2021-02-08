@@ -12,6 +12,8 @@ export class DashboardComponent implements OnInit {
 
   complains!: Complain[];
   feedbacks!: Feedback[];
+  comp!:boolean;
+  feed!:boolean;
   constructor(private userService : SignupService) { }
 
   ngOnInit(): void {
@@ -22,6 +24,18 @@ export class DashboardComponent implements OnInit {
    this.userService.getAllFeedback().subscribe(data =>{
     this.feedbacks = data;
   });
+  }
+
+  checkBoxcomp(){
+    this.feed = false;
+    this.comp=true;
+
+  }
+
+  checkBoxfeed(){
+    this.comp=false;
+    this.feed = true;
+
   }
 
 }

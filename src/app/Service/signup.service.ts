@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Complain } from '../Model/complain.model';
+import { DisplayName } from '../Model/display-name.model';
 import { Feedback } from '../Model/feedback.model';
 import { User } from '../Model/user.model';
 
@@ -46,6 +47,16 @@ export class SignupService {
   }
   getFeedbackById(id:string){
     return this._http.get(`http://localhost:3000/feedback/${id}`);
+  }
+
+// For displayName
+
+  updateName( name:DisplayName){
+    return this._http.put(`http://localhost:3000/displayName/${name.id}`,name);
+  }
+
+  loggedUser(){
+    return this._http.get<DisplayName>("http://localhost:3000/displayName");
   }
 
 }
