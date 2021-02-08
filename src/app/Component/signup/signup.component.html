@@ -5,29 +5,31 @@
             <form class="form-container" #myForm=ngForm>
                 <div class="form-group">
                     <label>First Name</label>
-                    <input type="string" class="form-control" placeholder="Enter First Name" name="FirstName" ngModel>
+                    <input type="string" class="form-control txt" placeholder="Enter First Name" name="FirstName" ngModel>
                 </div>
                 <div class="form-group">
                     <label>Last Name</label>
-                    <input type="string" class="form-control" placeholder="Enter Last Name" name="LastName" ngModel>
+                    <input type="string" class="form-control txt" placeholder="Enter Last Name" name="LastName" ngModel>
                 </div>
                 <div class="form-group">
                     <label>Mobile No.</label>
-                    <input type="number" class="form-control" placeholder="Enter Mobile No." name="Mobile" ngModel>
+                    <input type="number" class="form-control txt" placeholder="Enter Mobile No." name="Mobile" ngModel>
                 </div>
 
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="email" class="form-control" placeholder="Enter Email" name="Email" ngModel>
+                    <input type="email" class="form-control txt" placeholder="Enter Email" name="Email" ngModel>
 
                 </div>
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="password" class="form-control" placeholder="Password" ngModel>
+                    <input type="password" class="form-control txt" placeholder="Password" ngModel>
                 </div>
 
 
                 <button type="submit" class="btn btn-primary" (click)="addUser(myForm.value)">Submit</button>
+                <br>
+                <em><a [routerLink]="['/login']"><h4>Go Back to Login</h4></a></em>
             </form>
         </div>
     </div>
