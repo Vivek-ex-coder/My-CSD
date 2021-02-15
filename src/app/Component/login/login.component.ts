@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
   id:number =1;
   displayname!:DisplayName;
 
+
   constructor(private userService:SignupService, private router: Router) {
     this.user = new User;
     this.getUser();

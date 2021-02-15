@@ -1,6 +1,6 @@
-* {
+label {
     color: #edecf5
-}
+} 
 
 .txt {
     color: black;
@@ -10,11 +10,20 @@
     text-align: center
 }
 
+
 .bg {
     background: url('/assets/a1.jpg') no-repeat;
     background-size: cover;
     height: 100vh;
     width: 100%;
+}
+
+.textDanger{
+    color: red;
+}
+.hasError{
+    border-style: solid;
+    border-color: red;
 }
 
 .form-container {

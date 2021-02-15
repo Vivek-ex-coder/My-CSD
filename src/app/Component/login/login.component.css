@@ -2,6 +2,9 @@
     color: #ffffff
 }
 
+small>span{
+    color:red;
+}
 .txt {
     color: black;
 }
@@ -24,10 +27,16 @@
     /* -webkit-filter: blur(8px); */
 }
 
+
+.hasError{
+    border-style: solid;
+    border-color: red;
+}
+
 .form-container {
     border: 0px solid #ffffff;
     background-color: rgba(0, 0, 0, 0.5);
-    padding: 50px 60px;
+    padding: 40px 60px;
     margin-top: 20vh;
     -webkit-box-shadow: -1px 4px 26px 11px rgba(13, 35, 65, 0.75);
     box-shadow: -1px 4px 26px 11px rgba(12, 36, 56, 0.75);
