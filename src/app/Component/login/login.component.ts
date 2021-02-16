@@ -12,6 +12,8 @@ import { SignupService } from 'src/app/Service/signup.service';
 })
 export class LoginComponent implements OnInit {
 
+  mess: boolean=false;
+
   user!: User;
   users!: User[];
   homeIdToUpdate: any;
@@ -36,6 +38,14 @@ export class LoginComponent implements OnInit {
       this.users =data;
     });
   }
+
+  // onSubmit() {
+  //   if (this.form.valid) {
+  //     console.log("Form Submitted!");
+  //     this.form.reset();
+  //   }
+  // }
+
   gotoLogin() {
 
     if (this.user.email !== undefined && this.user.email !== null && this.user.email.length > 0) {
@@ -43,6 +53,9 @@ export class LoginComponent implements OnInit {
       for (let i = 0; i < this.users.length; i++) {
         if (this.users[i].password == this.user.password && this.users[i].email == this.user.email) {
           this.password = this.users[i].password;
+         
+
+
           // alert(this.users[i].firstName);
           // this.displayname.id=1;
           // this.displayname.firstName=this.users[i].firstName;
@@ -53,15 +66,21 @@ export class LoginComponent implements OnInit {
         }
       }
       
+      
       if(this.user.password == this.password){
-        alert("LOGIN SUCCESSFUL");
+        // alert("LOGIN SUCCESSFUL");
+          this.mess=true;
           this.router.navigate(['/home']);
-      } else {
+      } 
+      else {
         alert("Please enter the correct password or email Id");
       }
-    } else {
+      //this.mess=true;
+    } 
+    else {
       this.flag = true;
       alert("login not called");
+      
     }
   }
  
@@ -70,6 +89,7 @@ export class LoginComponent implements OnInit {
       this.users = service;
     });
   }
+  
 
 }
 

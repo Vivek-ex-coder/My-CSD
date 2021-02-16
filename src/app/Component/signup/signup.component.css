@@ -10,6 +10,16 @@ label {
     text-align: center
 }
 
+.w{
+    color: white;
+}
+
+
+
+button {
+    margin:auto;
+    display:block;
+  }
 
 .bg {
     background: url('/assets/a1.jpg') no-repeat;
@@ -29,8 +39,9 @@ label {
 .form-container {
     border: 0px solid #f8f4f4;
     background-color: rgba(39, 17, 17, 0.5);
-    padding: 50px 60px;
-    margin-top: 20vh;
+    padding: 30px 40px;
+    width:510px;
+    margin-top: 15vh;
     -webkit-box-shadow: -1px 4px 26px 11px rgba(15, 14, 4, 0.75);
     box-shadow: -1px 4px 26px 11px rgba(13, 14, 1, 0.75);
 }

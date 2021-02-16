@@ -1,4 +1,4 @@
-* {
+*{
     color: #ffffff
 }
 
@@ -27,6 +27,9 @@ small>span{
     /* -webkit-filter: blur(8px); */
 }
 
+.textDanger{
+    color:blueviolet;
+}
 
 .hasError{
     border-style: solid;
@@ -36,8 +39,8 @@ small>span{
 .form-container {
     border: 0px solid #ffffff;
     background-color: rgba(0, 0, 0, 0.5);
-    padding: 40px 60px;
-    margin-top: 20vh;
+    padding: 30px 60px;
+    margin-top: 10vh;
     -webkit-box-shadow: -1px 4px 26px 11px rgba(13, 35, 65, 0.75);
     box-shadow: -1px 4px 26px 11px rgba(12, 36, 56, 0.75);
 }

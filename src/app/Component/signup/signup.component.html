@@ -1,24 +1,26 @@
-<div class="container-fluid bg">
+<div class="container-fluid bg pt-2">
     <div class="row">
-        <div class="col-md-4 col-sm-4-xs-12"></div>
+        <div class="col-md-4 col-sm-4 col-xs-12"></div>
         <div class="col-md-4 col-sm-4 col-xs-12">
             <form class="form-container" #myForm="ngForm">
-                <div class="form-group">
+                <h1 class="c w">Sign Up</h1>
+                <div class="form-group col-sm-6">
                     <label for="firstname1">First Name</label>
                     <input type="text" id="firstname1"  name="FirstName" class="form-control txt" 
                         placeholder="Enter First Name"
                         required minlength="4" 
                         ngModel #firstname="ngModel"
                         [class.hasError]="firstname.invalid && firstname.touched">
-    
+
                     <small class="textDanger" *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)">
                         <span *ngIf="firstname.errors?.required"> Name is required.</span>
-                        <span *ngIf="firstname.errors?.minlength">Name must be at least 4 characters long.</span>
+                        <span *ngIf="firstname.errors?.minlength">Min of 4 characters.</span>
                     </small>
+                    <br>
                 </div>
 
 
-                <div class="form-group">
+                <div class="form-group col-sm-6">
                     <label for="lastname1">Last Name</label>
                     <input type="text" id="lastname1"  name="LastName" class="form-control txt" 
                         placeholder="Enter Last Name"
@@ -28,25 +30,15 @@
 
                     <small class="textDanger" *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)">
                         <span *ngIf="lastname.errors?.required"> Name is required.</span>
-                        <span *ngIf="lastname.errors?.minlength">Name must be at least 4 characters long.</span>
+                        <span *ngIf="lastname.errors?.minlength">Min of 4 characters.</span>
                     </small>
+                    <br>
                 </div>
 
-                <div class="form-group">
-                    <label for="mobileNo">Mobile No.</label>
-                    <input type="tel" id="mobileNo" name="Mobile" class="form-control txt" 
-                    placeholder="Enter Mobile No."  
-                    required pattern="[0-9]{10}$"
-                    ngModel #mobile="ngModel"
-                    [class.hasError]="mobile.invalid && mobile.touched">
+                
+                <div class="col-sm-4"></div>
 
-                    <small class="textDanger" *ngIf="mobile.invalid && (mobile.dirty || mobile.touched)" >
-                        <span *ngIf="mobile.errors?.required">Contact number is required.</span>
-                        <span *ngIf="mobile.errors?.pattern">Enter valid contact number </span>
-                    </small> 
-                </div>
-
-                <div class="form-group">
+                <div class="form-group col-sm-12">
                     <label for="mail">Email</label>
                     <input type="email" id="mail" name="Email" class="form-control txt" 
                     placeholder="Enter Email"  
@@ -59,9 +51,11 @@
                         <span *ngIf="email.errors?.required">Email ID is required.</span>
                         <span *ngIf="email.errors?.pattern">Enter valid Email ID</span>
                     </small>
+                    <br>
+
                 </div>
 
-                <div class="form-group">
+                <div class="form-group col-sm-5">
                     <label for="pwd">Password</label>
                     <input type="password" id="pwd" name="password" class="form-control txt" placeholder="Password"
                     minlength="4" maxlength="8" required 
@@ -71,14 +65,35 @@
 
                     <small class="textDanger" *ngIf="password.invalid && (password.dirty || password.touched)" >
                         <span *ngIf="password.errors?.required">Password is required.</span>
-                        <span *ngIf="password.errors?.minlength || password.errors?.maxlength">enter a valid password with minimum length of 4 and maximum length of 8</span>
+                        <span *ngIf="password.errors?.minlength || password.errors?.maxlength">Enter a valid password</span>
                     </small>
+                    <br>
+                </div>
+
+                <div class="form-group col-sm-7">
+                    <label for="mobileNo">Mobile No.</label>
+                    <input type="tel" id="mobileNo" name="Mobile" class="form-control txt" 
+                    placeholder="Enter Mobile No."  
+                    required pattern="[0-9]{10}$"
+                    ngModel #mobile="ngModel"
+                    [class.hasError]="mobile.invalid && mobile.touched">
+
+                    <small class="textDanger" *ngIf="mobile.invalid && (mobile.dirty || mobile.touched)" >
+                        <span *ngIf="mobile.errors?.required">Contact number is required.</span>
+                        <span *ngIf="mobile.errors?.pattern">Enter valid contact number </span>
+                    </small> 
+                    <br>
                 </div>
 
 
-                <button type="submit" class="btn btn-primary" (click)="addUser(myForm.value)">Submit</button>
-                <br>
-                <em><a [routerLink]="['/login']"><h4>Go Back to Login</h4></a></em>
+                <div class="col-sm-12"><button type="submit" class="btn btn-primary" (click)="addUser(myForm.value)" [disabled]="myForm.invalid">Submit</button></div>
+            
+    
+                <div style="margin-top: 10px;">
+                 <em class="c"><a [routerLink]="['/login']"><br><h4>Go Back to Login</h4></a></em>
+                </div>
+                
+                
             </form>
         </div>
     </div>
