@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import { User } from 'src/app/Model/user.model';
 import { SignupService } from 'src/app/Service/signup.service';
 
@@ -8,7 +8,10 @@ import { SignupService } from 'src/app/Service/signup.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
+  user = new User();
   allUser!:User[];
+
+  @ViewChild('myForm') form:any;
   constructor(private signupService:SignupService){}
 
   ngOnInit(){
@@ -20,6 +23,10 @@ export class SignupComponent implements OnInit {
 
     this.signupService.createUser(formObj).subscribe((response)=> {
       alert("User added successfully");
+      if (this.form.valid) {
+        //console.log("Form Submitted!",this.form.value);
+        this.form.reset();
+      }
       this.getLatestUser();
     });
 } 

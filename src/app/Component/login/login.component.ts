@@ -12,8 +12,6 @@ import { SignupService } from 'src/app/Service/signup.service';
 })
 export class LoginComponent implements OnInit {
 
-  mess: boolean=false;
-
   user!: User;
   users!: User[];
   homeIdToUpdate: any;
@@ -39,12 +37,6 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  // onSubmit() {
-  //   if (this.form.valid) {
-  //     console.log("Form Submitted!");
-  //     this.form.reset();
-  //   }
-  // }
 
   gotoLogin() {
 
@@ -68,14 +60,12 @@ export class LoginComponent implements OnInit {
       
       
       if(this.user.password == this.password){
-        // alert("LOGIN SUCCESSFUL");
-          this.mess=true;
+          alert("LOGIN SUCCESSFUL");
           this.router.navigate(['/home']);
       } 
       else {
         alert("Please enter the correct password or email Id");
       }
-      //this.mess=true;
     } 
     else {
       this.flag = true;

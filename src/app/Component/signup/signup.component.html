@@ -2,14 +2,14 @@
     <div class="row">
         <div class="col-md-4 col-sm-4 col-xs-12"></div>
         <div class="col-md-4 col-sm-4 col-xs-12">
-            <form class="form-container" #myForm="ngForm">
+            <form novalidate class="form-container" #myForm="ngForm" (ngSubmit)="addUser(myForm.value)">
                 <h1 class="c w">Sign Up</h1>
                 <div class="form-group col-sm-6">
                     <label for="firstname1">First Name</label>
                     <input type="text" id="firstname1"  name="FirstName" class="form-control txt" 
                         placeholder="Enter First Name"
                         required minlength="4" 
-                        ngModel #firstname="ngModel"
+                        [(ngModel)]="user.firstName" #firstname="ngModel"
                         [class.hasError]="firstname.invalid && firstname.touched">
 
                     <small class="textDanger" *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)">
@@ -25,7 +25,7 @@
                     <input type="text" id="lastname1"  name="LastName" class="form-control txt" 
                         placeholder="Enter Last Name"
                         required minlength="4" 
-                        ngModel #lastname="ngModel"
+                        [(ngModel)]="user.lastName" #lastname="ngModel"
                         [class.hasError]="lastname.invalid && lastname.touched">
 
                     <small class="textDanger" *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)">
@@ -42,9 +42,8 @@
                     <label for="mail">Email</label>
                     <input type="email" id="mail" name="Email" class="form-control txt" 
                     placeholder="Enter Email"  
-                    required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
-                     #email="ngModel"
-                     ngModel
+                    required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" 
+                    [(ngModel)]="user.email" #email="ngModel"
                     [class.hasError]="email.invalid && email.touched">
 
                     <small class="textDanger" *ngIf="email.invalid && (email.dirty || email.touched)" >
@@ -59,8 +58,8 @@
                     <label for="pwd">Password</label>
                     <input type="password" id="pwd" name="password" class="form-control txt" placeholder="Password"
                     minlength="4" maxlength="8" required 
-                    #password="ngModel"
-                    ngModel
+                    [(ngModel)]="user.password" #password="ngModel"
+                    
                     [class.hasError]="password.invalid && password.touched">
 
                     <small class="textDanger" *ngIf="password.invalid && (password.dirty || password.touched)" >
@@ -75,7 +74,7 @@
                     <input type="tel" id="mobileNo" name="Mobile" class="form-control txt" 
                     placeholder="Enter Mobile No."  
                     required pattern="[0-9]{10}$"
-                    ngModel #mobile="ngModel"
+                    [(ngModel)]="user.mobile" #mobile="ngModel"
                     [class.hasError]="mobile.invalid && mobile.touched">
 
                     <small class="textDanger" *ngIf="mobile.invalid && (mobile.dirty || mobile.touched)" >
@@ -86,7 +85,7 @@
                 </div>
 
 
-                <div class="col-sm-12"><button type="submit" class="btn btn-primary" (click)="addUser(myForm.value)" [disabled]="myForm.invalid">Submit</button></div>
+                <div class="col-sm-12"><button type="submit" class="btn btn-primary"  [disabled]="myForm.invalid">Submit</button></div>
             
     
                 <div style="margin-top: 10px;">

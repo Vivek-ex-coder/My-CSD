@@ -26,3 +26,9 @@
     text-shadow: rgb(233, 99, 10);
     text-decoration-color: darkcyan;
 }
+
+@media screen and (max-width:600px){
+    #logoBrand{
+        display:none;
+    }
+}

@@ -2,7 +2,8 @@
 
 <div class="container">
     <h2 class="text-center">Feedback form</h2><br>
-    <form class="form-horizontal" action="/action_page.php" #myFeedback=ngForm name="feedbackForm">
+    <form class="form-horizontal" action="/action_page.php" #myFeedback=ngForm name="feedbackForm"
+    (ngSubmit)="onSubmit()">
         <div class="form-group">
             <label class="control-label col-sm-2" for="name">User name:</label>
             <div class="col-sm-7">

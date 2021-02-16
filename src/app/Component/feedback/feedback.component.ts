@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild }  from '@angular/core';
 import { Feedback } from 'src/app/Model/feedback.model';
 import { SignupService } from 'src/app/Service/signup.service';
+
+
 
 @Component({
   selector: 'app-feedback',
@@ -9,8 +11,17 @@ import { SignupService } from 'src/app/Service/signup.service';
 })
 export class FeedbackComponent implements OnInit {
 
+  @ViewChild('myfeedback') form: any;
+
   allFeedback!: Feedback[];
 
+
+  onSubmit() {
+    if (this.form.valid) {
+      console.log("Form Submitted!");
+      this.form.reset();
+    }
+  }
 
   constructor(private signupService:SignupService) { }
 
