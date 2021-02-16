@@ -4,6 +4,12 @@
         <div class="col-md-4 col-sm-4 col-xs-12">
             <form novalidate class="form-container" #myForm="ngForm" (ngSubmit)="addUser(myForm.value)">
                 <h1 class="c w">Sign Up</h1>
+
+                <div *ngIf="alert" class="alert alert-success alert-dismissible">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Signed up successfully</strong>
+                </div> 
+
                 <div class="form-group col-sm-6">
                     <label for="firstname1">First Name</label>
                     <input type="text" id="firstname1"  name="FirstName" class="form-control txt" 

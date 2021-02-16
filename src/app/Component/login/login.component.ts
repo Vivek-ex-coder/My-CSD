@@ -12,6 +12,7 @@ import { SignupService } from 'src/app/Service/signup.service';
 })
 export class LoginComponent implements OnInit {
 
+  alert:boolean=false;
   user!: User;
   users!: User[];
   homeIdToUpdate: any;
@@ -46,7 +47,7 @@ export class LoginComponent implements OnInit {
         if (this.users[i].password == this.user.password && this.users[i].email == this.user.email) {
           this.password = this.users[i].password;
          
-
+          
 
           // alert(this.users[i].firstName);
           // this.displayname.id=1;
@@ -57,15 +58,17 @@ export class LoginComponent implements OnInit {
           // });
         }
       }
+      this.alert=true;
       
       
       if(this.user.password == this.password){
-          alert("LOGIN SUCCESSFUL");
+          // alert("LOGIN SUCCESSFUL");
+          
           this.router.navigate(['/home']);
       } 
-      else {
-        alert("Please enter the correct password or email Id");
-      }
+      // else {
+      //   alert("Please enter the correct password or email Id");
+      // }
     } 
     else {
       this.flag = true;

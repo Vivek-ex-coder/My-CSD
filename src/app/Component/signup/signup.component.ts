@@ -10,6 +10,7 @@ import { SignupService } from 'src/app/Service/signup.service';
 export class SignupComponent implements OnInit {
   user = new User();
   allUser!:User[];
+  alert:boolean=false;
 
   @ViewChild('myForm') form:any;
   constructor(private signupService:SignupService){}
@@ -22,13 +23,15 @@ export class SignupComponent implements OnInit {
     console.log(formObj)
 
     this.signupService.createUser(formObj).subscribe((response)=> {
-      alert("User added successfully");
+      // alert("User added successfully");
+      
       if (this.form.valid) {
-        //console.log("Form Submitted!",this.form.value);
         this.form.reset();
       }
       this.getLatestUser();
+      this.alert=true;
     });
+    
 } 
   getLatestUser() {
     this.signupService.getAllUser().subscribe((response)=>{
