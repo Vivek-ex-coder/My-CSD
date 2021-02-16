@@ -3,7 +3,6 @@ import { Feedback } from 'src/app/Model/feedback.model';
 import { SignupService } from 'src/app/Service/signup.service';
 
 
-
 @Component({
   selector: 'app-feedback',
   templateUrl: './feedback.component.html',
@@ -11,17 +10,12 @@ import { SignupService } from 'src/app/Service/signup.service';
 })
 export class FeedbackComponent implements OnInit {
 
-  @ViewChild('myfeedback') form: any;
+  alert:boolean=false;
+  @ViewChild('myFeedback') form: any;
 
+  feedback = new Feedback();
   allFeedback!: Feedback[];
 
-
-  onSubmit() {
-    if (this.form.valid) {
-      console.log("Form Submitted!");
-      this.form.reset();
-    }
-  }
 
   constructor(private signupService:SignupService) { }
 
@@ -29,22 +23,18 @@ export class FeedbackComponent implements OnInit {
     this.getLatestUser();
   }
 
-
-
-
-
   addFeedback(formObj: any){
     console.log(formObj);
     this.signupService.createFeedback(formObj).subscribe((response)=> {
-    this.getLatestUser();
+      if (this.form.valid) {
+        this.form.reset();
+      }
+      this.getLatestUser();
+      this.alert=true;
+    });
     
-  }) 
-  alert("Submitted Successfully");
-  // formObj.reset();
-  // document.feedbackForm.reset();
-  
+} 
  
-  }
   getLatestUser() {
       this.signupService.getAllFeedback().subscribe((response)=>{
         this.allFeedback = response;

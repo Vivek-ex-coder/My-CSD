@@ -2,6 +2,85 @@
 
 <div class="container">
     <h2 class="text-center">Feedback form</h2><br>
+    <div *ngIf="alert" class="alert alert-success alert-dismissible">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        Feedback has been added <strong>successfully.</strong>
+    </div> 
+
+    <form novalidate class="form-horizontal"  #myFeedback="ngForm" (ngSubmit)="addFeedback(myFeedback.value)">
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="name">User name:</label>
+            <div class="col-sm-7">
+                <input type="name" class="form-control" id="name" 
+                placeholder="Enter name" name="userName" 
+                required minlength="3"  
+                [(ngModel)]="feedback.userName" #username="ngModel">
+                <div class="dangertext" *ngIf="username.touched && username.invalid">
+                    <div *ngIf="username.errors?.required">user name is required</div>
+                    <div *ngIf="username.errors?.minlength ">min length is 3</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="contactno">Contact number:</label>
+            <div class="col-sm-6">
+                <input required type="number" class="form-control" id="contactno" 
+                placeholder="Enter contact number" name="contactNumber"
+                pattern="[1-9]{1}[0-9]{9}" 
+                [(ngModel)]="feedback.contactNumber" #contactNumber="ngModel">
+                <div class="dangertext" *ngIf="contactNumber.touched && contactNumber.invalid">
+                    <div *ngIf="contactNumber.errors?.required">Contact number is required</div>
+                    <div *ngIf="contactNumber.errors?.pattern">Enter valid Contact Number</div>
+                  </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="rate">Rate Service:</label>
+            <div class="col-sm-6">
+                <input type="range" id="vol" name="vol" min="0" max="5" name="rateService" required 
+                [(ngModel)]="feedback.rateService">
+            </div>
+
+            <div class="col-sm-8">
+                (Rate between 1 and 5), 1 being the least and 5 being the highest
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="succ">Suggestion:</label>
+            <div class="col-sm-7">
+                <textarea type="text" class="form-control" rows="4" required name="suggestion" 
+                [(ngModel)]="feedback.suggestion" #suggestion="ngModel"></textarea>
+                
+                <div class="dangertext" *ngIf="suggestion.touched && suggestion.invalid">
+                    <div *ngIf="suggestion.errors?.required">Give some feedback</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="control-label col-sm-6">
+                <button type="submit" class="btn btn-primary" [disabled]="myFeedback.invalid">Submit</button>
+
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
+    <h2 class="text-center">Feedback form</h2><br>
     <form class="form-horizontal" action="/action_page.php" #myFeedback=ngForm name="feedbackForm"
     (ngSubmit)="onSubmit()">
         <div class="form-group">
@@ -44,4 +123,4 @@
             </div>
         </div>
     </form>
-</div>
+</div> -->

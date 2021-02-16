@@ -1,20 +1,40 @@
 <app-menu></app-menu>
 
 <h2 class="text-center">Complaint registration form</h2>
-    <form class="form-horizontal" #myComplain=ngForm>
+
+<div *ngIf="alert" class="alert alert-success alert-dismissible">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  Complaint has been added <strong>successfully.</strong>
+
+</div> 
+    <form novalidate class="form-horizontal" #myComplain="ngForm" (ngSubmit)="addComplain(myComplain.value)">
       <div class="col-sm-6">
         <div class="form-group">
           <label class="control-label col-sm-4">Customer Name</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control" name="custName" ngModel>
+            <input type="text" class="form-control" name="custName" 
+            required  minlength="3"  
+            [(ngModel)]="complain.custName" #custname="ngModel">
+
+            <div class="dangertext" *ngIf="custname.touched && custname.invalid">
+              <div *ngIf="custname.errors?.required">name is required</div>
+              <div *ngIf="custname.errors?.minlength ">min length is 3</div>
+            </div>
           </div>
         </div>
-    
     
         <div class="form-group">
           <label class="control-label col-sm-4">Customer Email ID</label>
           <div class="col-sm-8">
-            <input type="email" class="form-control" name="mail" ngModel>
+            <input type="email" class="form-control" name="mail"
+            required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+            [(ngModel)]="complain.mail" #mails="ngModel">
+
+            <div class="dangertext" *ngIf="mails.touched && mails.invalid">
+              <div *ngIf="mails.errors?.required">mail id is required</div>
+              <div *ngIf="mails.errors?.pattern">Enter valid email id</div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -23,33 +43,58 @@
         <div class="form-group">
           <label class="control-label col-sm-4">Product Name</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control" name="productName" ngModel>
+            <input type="text"  class="form-control" name="productName" 
+            required  minlength="2"
+            [(ngModel)]="complain.productName" #prodname="ngModel">
+
+            <div class="dangertext" *ngIf="prodname.touched && prodname.invalid">
+              <div *ngIf="prodname.errors?.required">product name is required</div>
+              <div *ngIf="prodname.errors?.minlength">min length is 2</div>
+            </div>
           </div>
         </div>
     
         <div class="form-group">
           <label class="control-label col-sm-4">Product ID</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control" name="productId" ngModel>
+            <input type="text" class="form-control" name="productId" required
+            [(ngModel)]="complain.productId" #prodId="ngModel">
+            
+            <div class="dangertext" *ngIf="prodId.touched && prodId.invalid">
+              <div *ngIf="prodId.errors?.required">product id is required</div>
+            </div>
           </div>
         </div>
       </div>
     
       <div class="col-sm-12">
         <div class="form-group">
-          <label class="control-label col-sm-2">Product Address</label>
+          <label class="control-label col-sm-2">Customer Address</label>
           <div class="col-sm-10">
-            <textarea type="text" class="form-control" rows="2" name="productAdress" ngModel></textarea>
+            <textarea type="text" class="form-control" rows="2" name="productAdress" 
+            required  minlength="5"
+            [(ngModel)]="complain.productAdress" #prodAdress="ngModel"></textarea>
+
+            <div class="dangertext" *ngIf="prodAdress.touched && prodAdress.invalid">
+              <div *ngIf="prodAdress.errors?.required">Customer Address is required</div>
+              <div *ngIf="prodAdress.errors?.minlength">Enter valid Address</div>
+            </div>
           </div>
         </div>
       </div>
-
 
       <div class="col-sm-6">
         <div class="form-group">
           <label class="col-sm-4 control-label" for="phone">Contact Number</label>
           <div class="col-sm-8">
-            <input type="text" name="country_code" class="form-control" pattern="[1-9]{1}[0-9]{9}" name="contactNumber" ngModel>
+            <input  type="text" name="country_code" class="form-control" name="contactNumber" 
+            required pattern="[1-9]{1}[0-9]{9}" 
+            [(ngModel)]="complain.contactNumber" #contactNo="ngModel">
+
+            <div class="dangertext" *ngIf="contactNo.touched && contactNo.invalid">
+              <div *ngIf="contactNo.errors?.required">Contact number is required</div>
+              <div *ngIf="contactNo.errors?.pattern">Enter valid Contact Number</div>
+            </div>
           </div>
         </div>
       </div>
@@ -58,24 +103,34 @@
         <div class="form-group">
           <label class="col-sm-4 control-label">Repair/Replacement/Refund</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control" name="repair" ngModel>
+            <input type="text" class="form-control" name="repair" required 
+            [(ngModel)]="complain.repair" #repairs="ngModel">
+
+            <div class="dangertext" *ngIf="repairs.touched && repairs.invalid">
+              <div *ngIf="repairs.errors?.required">specify the Service required</div>
+            </div>
           </div>
         </div>
       </div>
     
-
       <div class="col-sm-12">
         <div class="form-group">
           <label class="control-label col-sm-2">Complaint InDetail</label>
           <div class="col-sm-10">
-            <textarea type="text" class="form-control" rows="4" name="complain" ngModel></textarea>
+            <textarea required type="text" minlength="10" class="form-control" rows="4" name="complain"
+            [(ngModel)]="complain.complain" #complains="ngModel"></textarea>
+            <div class="dangertext"s *ngIf="complains.touched && complains.invalid">
+              <div *ngIf="complains.errors?.required">enter the issue</div>
+              <div *ngIf="complains.errors?.minlength">descibe the issue with minimum of 10 characters</div>
+            </div>
           </div>
         </div>
       </div>
 
-    
-      <div class="text-center">
-        <button class="btn btn-primary waves-effect waves-light " id="btn-submit" (click)="addComplain(myComplain.value)" >SUBMIT</button>
+      <div class="col-sm-12">
+        <div class="text-center">
+          <button class="btn btn-primary waves-effect waves-light" [disabled]="myComplain.invalid" id="btn-submit">SUBMIT</button>
+        </div>
       </div>
       <input type="hidden" name="action" id="action" value="event_dialog_add_newpartnerdata" />
     </form>

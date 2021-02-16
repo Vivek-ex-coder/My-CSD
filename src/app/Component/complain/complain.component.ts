@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Complain } from 'src/app/Model/complain.model';
 import { SignupService } from 'src/app/Service/signup.service';
 
@@ -9,7 +9,12 @@ import { SignupService } from 'src/app/Service/signup.service';
 })
 export class ComplainComponent implements OnInit {
 
+  complain = new Complain();
   allComplain!: Complain[];
+  
+  @ViewChild('myComplain') form: any;
+  alert:boolean=false;
+
 
   constructor(private signupService:SignupService) { }
 
@@ -20,10 +25,12 @@ export class ComplainComponent implements OnInit {
   addComplain(formObj: any){
     console.log(formObj);
     this.signupService.createComplain(formObj).subscribe((response)=> {
-    this.getLatestUser();
-  });
-  alert("Complain Registered");
-  formObj.reset();
+      if (this.form.valid) {
+        this.form.reset();
+      }
+      this.getLatestUser();
+      this.alert=true;
+  });  
 }
 
   getLatestUser() {
