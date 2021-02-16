@@ -27,6 +27,17 @@
     text-decoration-color: darkcyan;
 }
 
+
+/* Modify the backgorund color  
+.navbar-custom { 
+    background-color: lightgreen; 
+    max-width:100%;
+}
+    
+ .navbar-text { 
+    color: lightgreen; 
+} */
+
 @media screen and (max-width:600px){
     #logoBrand{
         display:none;

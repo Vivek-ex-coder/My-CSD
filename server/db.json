@@ -36,8 +36,7 @@
       "password": "123456",
       "Mobile": "9213468754",
       "id": 18
-    }   
-    
+    }
   ],
   "complain": [
     {
@@ -125,7 +124,6 @@
       "suggestion": "Very Good",
       "id": 4
     },
-    
     {
       "userName": "Vivek ",
       "contactNumber": 997700,
@@ -140,7 +138,6 @@
       "suggestion": "Good Service",
       "id": 8
     },
-   
     {
       "userName": "Saurabh",
       "contactNumber": 5678,
@@ -148,8 +145,6 @@
       "suggestion": "Thank You",
       "id": 10
     },
-    
-   
     {
       "userName": "Radha",
       "contactNumber": 587612365,
