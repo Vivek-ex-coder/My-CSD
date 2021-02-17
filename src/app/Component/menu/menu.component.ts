@@ -18,10 +18,7 @@ export class MenuComponent implements OnInit {
     
     this.userService.loggedUser().subscribe(data =>{
       this.displayName = data;
-      // alert(this.displayName);
-      // console.log(this.displayName);
-        });
-    // this.displayName = this.name.getName();
-}
+            });
+    }
 
 }

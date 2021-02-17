@@ -21,9 +21,7 @@ const routes: Routes = [
   {
     path:'feedback',component: FeedbackComponent
   },
-  // {
-  //   path:'service',component:ServiceComponent
-  // },
+  
   {
     path:'complain',component:ComplainComponent
   },

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Complain } from 'src/app/Model/complain.model';
 import { Feedback } from 'src/app/Model/feedback.model';
+import { User } from 'src/app/Model/user.model';
 import { SignupService } from 'src/app/Service/signup.service';
 
 @Component({
@@ -10,10 +11,13 @@ import { SignupService } from 'src/app/Service/signup.service';
 })
 export class DashboardComponent implements OnInit {
 
+  users!: User[];
   complains!: Complain[];
   feedbacks!: Feedback[];
   comp!:boolean;
   feed!:boolean;
+  use!:boolean;
+
   constructor(private userService : SignupService) { }
 
   ngOnInit(): void {
@@ -24,18 +28,31 @@ export class DashboardComponent implements OnInit {
    this.userService.getAllFeedback().subscribe(data =>{
     this.feedbacks = data;
   });
+
+  this.userService.getAllUser().subscribe(data  =>{
+    this.users =data;
+  });
   }
 
   checkBoxcomp(){
+    this.use=false;
     this.feed = false;
     this.comp=true;
 
   }
 
   checkBoxfeed(){
+    this.use=false;
     this.comp=false;
     this.feed = true;
 
   }
 
+  checkBoxUse(){
+    
+    this.comp=false;
+    this.feed = false;
+    this.use=true;
+
+  }
 }

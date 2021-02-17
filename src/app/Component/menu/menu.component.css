@@ -38,8 +38,8 @@
     color: lightgreen; 
 } */
 
-@media screen and (max-width:600px){
-    #logoBrand{
-        display:none;
+@media screen and (max-width:750px) {
+    #logoBrand {
+        display: none;
     }
 }

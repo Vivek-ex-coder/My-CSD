@@ -8,15 +8,11 @@
                 <div *ngIf="alert" class="alert alert-success alert-dismissible">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                     <strong>Signed up successfully</strong>
-                </div> 
+                </div>
 
                 <div class="form-group col-sm-6">
                     <label for="firstname1">First Name</label>
-                    <input type="text" id="firstname1"  name="FirstName" class="form-control txt" 
-                        placeholder="Enter First Name"
-                        required minlength="4" 
-                        [(ngModel)]="user.firstName" #firstname="ngModel"
-                        [class.hasError]="firstname.invalid && firstname.touched">
+                    <input type="text" id="firstname1" name="firstName" class="form-control txt" placeholder="Enter First Name" required minlength="4" [(ngModel)]="user.firstName" #firstname="ngModel" [class.hasError]="firstname.invalid && firstname.touched">
 
                     <small class="textDanger" *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)">
                         <span *ngIf="firstname.errors?.required"> Name is required.</span>
@@ -28,11 +24,7 @@
 
                 <div class="form-group col-sm-6">
                     <label for="lastname1">Last Name</label>
-                    <input type="text" id="lastname1"  name="LastName" class="form-control txt" 
-                        placeholder="Enter Last Name"
-                        required minlength="4" 
-                        [(ngModel)]="user.lastName" #lastname="ngModel"
-                        [class.hasError]="lastname.invalid && lastname.touched">
+                    <input type="text" id="lastname1" name="lastName" class="form-control txt" placeholder="Enter Last Name" required minlength="4" [(ngModel)]="user.lastName" #lastname="ngModel" [class.hasError]="lastname.invalid && lastname.touched">
 
                     <small class="textDanger" *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)">
                         <span *ngIf="lastname.errors?.required"> Name is required.</span>
@@ -41,18 +33,14 @@
                     <br>
                 </div>
 
-                
+
                 <div class="col-sm-4"></div>
 
                 <div class="form-group col-sm-12">
                     <label for="mail">Email</label>
-                    <input type="email" id="mail" name="Email" class="form-control txt" 
-                    placeholder="Enter Email"  
-                    required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" 
-                    [(ngModel)]="user.email" #email="ngModel"
-                    [class.hasError]="email.invalid && email.touched">
+                    <input type="email" id="mail" name="email" class="form-control txt" placeholder="Enter Email" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" [(ngModel)]="user.email" #email="ngModel" [class.hasError]="email.invalid && email.touched">
 
-                    <small class="textDanger" *ngIf="email.invalid && (email.dirty || email.touched)" >
+                    <small class="textDanger" *ngIf="email.invalid && (email.dirty || email.touched)">
                         <span *ngIf="email.errors?.required">Email ID is required.</span>
                         <span *ngIf="email.errors?.pattern">Enter valid Email ID</span>
                     </small>
@@ -62,13 +50,9 @@
 
                 <div class="form-group col-sm-5">
                     <label for="pwd">Password</label>
-                    <input type="password" id="pwd" name="password" class="form-control txt" placeholder="Password"
-                    minlength="4" maxlength="8" required 
-                    [(ngModel)]="user.password" #password="ngModel"
-                    
-                    [class.hasError]="password.invalid && password.touched">
+                    <input type="password" id="pwd" name="password" class="form-control txt" placeholder="Password" minlength="4" maxlength="8" required [(ngModel)]="user.password" #password="ngModel" [class.hasError]="password.invalid && password.touched">
 
-                    <small class="textDanger" *ngIf="password.invalid && (password.dirty || password.touched)" >
+                    <small class="textDanger" *ngIf="password.invalid && (password.dirty || password.touched)">
                         <span *ngIf="password.errors?.required">Password is required.</span>
                         <span *ngIf="password.errors?.minlength || password.errors?.maxlength">Enter a valid password</span>
                     </small>
@@ -77,28 +61,24 @@
 
                 <div class="form-group col-sm-7">
                     <label for="mobileNo">Mobile No.</label>
-                    <input type="tel" id="mobileNo" name="Mobile" class="form-control txt" 
-                    placeholder="Enter Mobile No."  
-                    required pattern="[0-9]{10}$"
-                    [(ngModel)]="user.mobile" #mobile="ngModel"
-                    [class.hasError]="mobile.invalid && mobile.touched">
+                    <input type="tel" id="mobileNo" name="mobile" class="form-control txt" placeholder="Enter Mobile No." required pattern="[0-9]{10}$" [(ngModel)]="user.mobile" #mobile="ngModel" [class.hasError]="mobile.invalid && mobile.touched">
 
-                    <small class="textDanger" *ngIf="mobile.invalid && (mobile.dirty || mobile.touched)" >
+                    <small class="textDanger" *ngIf="mobile.invalid && (mobile.dirty || mobile.touched)">
                         <span *ngIf="mobile.errors?.required">Contact number is required.</span>
                         <span *ngIf="mobile.errors?.pattern">Enter valid contact number </span>
-                    </small> 
+                    </small>
                     <br>
                 </div>
 
 
-                <div class="col-sm-12"><button type="submit" class="btn btn-primary"  [disabled]="myForm.invalid">Submit</button></div>
-            
-    
+                <div class="col-sm-12"><button type="submit" class="btn btn-primary" [disabled]="myForm.invalid">Submit</button></div>
+
+
                 <div style="margin-top: 10px;">
-                 <em class="c"><a [routerLink]="['/login']"><br><h4>Go Back to Login</h4></a></em>
+                    <em class="c"><a [routerLink]="['/login']"><br><h4>Go Back to Login</h4></a></em>
                 </div>
-                
-                
+
+
             </form>
         </div>
     </div>
