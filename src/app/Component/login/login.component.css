@@ -1,12 +1,17 @@
-*{
+* {
     color: #ffffff
 }
 
-small>span{
-    color:red;
+small>span {
+    color: red;
 }
+
 .txt {
     color: black;
+}
+
+.cc {
+    color: rgba(0, 0, 0, 0.479);
 }
 
 .c {
@@ -15,23 +20,20 @@ small>span{
 
 .bg {
     background: url('/assets/a1.jpg') no-repeat;
-    /* backdrop-filter: blur(100px); */
     background-size: cover;
     height: 100vh;
     width: 100%;
 }
 
 .foreground {
-    /* backdrop-filter: blur(10px); */
     filter: blur(4px);
-    /* -webkit-filter: blur(8px); */
 }
 
-.textDanger{
-    color:blueviolet;
+.textDanger {
+    color: blueviolet;
 }
 
-.hasError{
+.hasError {
     border-style: solid;
     border-color: red;
 }

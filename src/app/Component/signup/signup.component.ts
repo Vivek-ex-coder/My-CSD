@@ -21,11 +21,8 @@ export class SignupComponent implements OnInit {
 
   addUser(formObj: User){
     console.log(formObj)
-
     this.signupService.createUser(formObj).subscribe((response)=> {
-      // alert("User added successfully");
-      
-      if (this.form.valid) {
+        if (this.form.valid) {
         this.form.reset();
       }
       this.getLatestUser();
