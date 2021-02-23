@@ -71,8 +71,15 @@
       "password": "12345",
       "mobile": "9845763425",
       "id": 9
+    },
+    {
+      "firstName": "Sham",
+      "lastName": "Kumar",
+      "email": "ShamG@gmail.com",
+      "password": "101010",
+      "mobile": "7985427345",
+      "id": 10
     }
-   
   ],
   "complain": [
     {
@@ -151,6 +158,17 @@
       "repair": "Replace",
       "complain": "Speaker is not working",
       "id": 7
+    },
+    {
+      "custName": "Sham",
+      "mail": "shamg@gmail.com",
+      "productName": "mobile",
+      "productId": "5643",
+      "productAdress": "Jayanagar,bangalore-560040",
+      "contactNumber": "9866434221",
+      "repair": "repair ",
+      "complain": "display not working",
+      "id": 8
     }
   ],
   "feedback": [

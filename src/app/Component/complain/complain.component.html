@@ -1,6 +1,6 @@
 <app-menu></app-menu>
 
-<h2 class="text-center">Complaint registration form</h2>
+<h2 class="text-center">Complaint registration form</h2><br>
 
 <div *ngIf="alert" class="alert alert-success alert-dismissible">
   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -27,7 +27,7 @@
           <label class="control-label col-sm-4">Customer Email ID</label>
           <div class="col-sm-8">
             <input type="email" class="form-control" name="mail"
-            required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+            required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$" 
             [(ngModel)]="complain.mail" #mails="ngModel">
 
             <div class="dangertext" *ngIf="mails.touched && mails.invalid">

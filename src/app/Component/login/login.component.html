@@ -16,7 +16,10 @@
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control txt" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Enter email" #email="ngModel" [(ngModel)]="user.email" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" [class.hasError]="email.invalid && email.touched">
+                    <input type="email" class="form-control txt" id="exampleInputEmail1" name="email" 
+                    aria-describedby="emailHelp" placeholder="Enter Email" #email="ngModel" [(ngModel)]="user.email" 
+                    required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$" 
+                    [class.hasError]="email.invalid && email.touched">
 
                     <small class="textDanger" *ngIf="email.invalid && (email.dirty || email.touched)">
                         <span *ngIf="email.errors?.required">Email ID is required</span>
@@ -28,7 +31,9 @@
 
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control txt" name="userPassword" id="exampleInputPassword1" placeholder="Password" minlength="4" maxlength="8" required [(ngModel)]="user.password" #password="ngModel" [class.hasError]="password.invalid && password.touched">
+                    <input type="password" class="form-control txt" name="userPassword" id="exampleInputPassword1" 
+                    placeholder="Password" minlength="4" maxlength="8" required 
+                    [(ngModel)]="user.password" #password="ngModel" [class.hasError]="password.invalid && password.touched">
 
                     <small class="textDanger" *ngIf="password.invalid && (password.dirty || password.touched)">
                         <span *ngIf="password.errors?.required">Password is required.</span>

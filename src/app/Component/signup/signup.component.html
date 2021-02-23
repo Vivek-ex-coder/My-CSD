@@ -38,7 +38,7 @@
 
                 <div class="form-group col-sm-12">
                     <label for="mail">Email</label>
-                    <input type="email" id="mail" name="email" class="form-control txt" placeholder="Enter Email" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" [(ngModel)]="user.email" #email="ngModel" [class.hasError]="email.invalid && email.touched">
+                    <input type="email" id="mail" name="email" class="form-control txt" placeholder="Enter Email" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$" [(ngModel)]="user.email" #email="ngModel" [class.hasError]="email.invalid && email.touched">
 
                     <small class="textDanger" *ngIf="email.invalid && (email.dirty || email.touched)">
                         <span *ngIf="email.errors?.required">Email ID is required.</span>
@@ -61,7 +61,7 @@
 
                 <div class="form-group col-sm-7">
                     <label for="mobileNo">Mobile No.</label>
-                    <input type="tel" id="mobileNo" name="mobile" class="form-control txt" placeholder="Enter Mobile No." required pattern="[0-9]{10}$" [(ngModel)]="user.mobile" #mobile="ngModel" [class.hasError]="mobile.invalid && mobile.touched">
+                    <input type="tel" id="mobileNo" name="mobile" class="form-control txt" placeholder="Enter Mobile No." required pattern="[1-9]{1}[0-9]{9}$" [(ngModel)]="user.mobile" #mobile="ngModel" [class.hasError]="mobile.invalid && mobile.touched">
 
                     <small class="textDanger" *ngIf="mobile.invalid && (mobile.dirty || mobile.touched)">
                         <span *ngIf="mobile.errors?.required">Contact number is required.</span>
