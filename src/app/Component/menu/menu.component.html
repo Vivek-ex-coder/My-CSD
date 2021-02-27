@@ -1,21 +1,20 @@
-<nav class="navbar navbar-inverse">
+<nav class="navbar my-navbar">
     <div class="container-fluid">
         <div class="navbar-header">
-
             <div class="form-container" id="logoBrand">
                 <a class="navbar-brand" href="#">
-                    <strong><p class="text-1">Digital Emporium</p></strong></a><br>
-                <small id="emailHelp" class="form-text text-muted fo">
-                    <strong> We Value our Customer</strong></small>
+                    <i><p class="text-1">Digital Emporium</p></i></a>
+                <!-- <small id="emailHelp" class="form-text text-muted fo">
+                    <strong> We Value our Customer</strong></small> -->
             </div>
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>                        
-              </button>
+            </button>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav topnav">
             
                 <li [routerLinkActive]="['active']"><a [routerLink]="['/home']">Home</a></li>
 
@@ -26,9 +25,9 @@
                 <li [routerLinkActive]="['active']"><a [routerLink]="['/dashboard']">Dashboard</a></li>
 
             </ul>
-            <div class="right">
-                <h3><em>Welcome </em></h3>
-            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a [routerLink]="['/login']"><i class="fa fa-sign-out" style="font-size:24px"></i></a></li>
+            </ul>
         </div>
     </div>
 </nav>

@@ -1,3 +1,15 @@
+#heading2 {
+    color: #153c7e;
+        text-align:center;
+        margin-left: 3px;
+        padding: 10px; 
+        display:block;
+        font-weight:100 ;
+        font-size: 445%;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        line-height: 1;
+    }
+
 label {
     color: #edecf5
 } 
@@ -9,12 +21,6 @@ label {
 .c {
     text-align: center
 }
-
-.w{
-    color: white;
-}
-
-
 
 button {
     margin:auto;
@@ -39,9 +45,9 @@ button {
 .form-container {
     border: 0px solid #f8f4f4;
     background-color: rgba(39, 17, 17, 0.5);
-    padding: 30px 40px;
-    width:510px;
-    margin-top: 15vh;
+    padding: 30px 37px;
+    width:495px;
+    margin-top: 6vh;
     -webkit-box-shadow: -1px 4px 26px 11px rgba(15, 14, 4, 0.75);
     box-shadow: -1px 4px 26px 11px rgba(13, 14, 1, 0.75);
 }
