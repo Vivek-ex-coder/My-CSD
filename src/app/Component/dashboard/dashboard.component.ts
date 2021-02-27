@@ -17,6 +17,10 @@ export class DashboardComponent implements OnInit {
   comp!:boolean;
   feed!:boolean;
   use!:boolean;
+  initialdisplay:boolean = true;
+  alert1:boolean = false;
+  alert2:boolean = false;
+  alert3:boolean = false;
 
   constructor(private userService : SignupService) { }
 
@@ -32,12 +36,17 @@ export class DashboardComponent implements OnInit {
   this.userService.getAllUser().subscribe(data  =>{
     this.users =data;
   });
+
   }
 
   checkBoxcomp(){
     this.use=false;
     this.feed = false;
     this.comp=true;
+    this.initialdisplay=false;
+    if (this.complains.length == 0){
+      this.alert1=true;
+    }
 
   }
 
@@ -45,6 +54,10 @@ export class DashboardComponent implements OnInit {
     this.use=false;
     this.comp=false;
     this.feed = true;
+    this.initialdisplay=false;
+    if (this.feedbacks.length == 0){
+      this.alert2=true;
+    }
 
   }
 
@@ -53,6 +66,10 @@ export class DashboardComponent implements OnInit {
     this.comp=false;
     this.feed = false;
     this.use=true;
+    this.initialdisplay=false;
+    if (this.users.length == 0){
+      this.alert3=true;
+    }
 
   }
 }

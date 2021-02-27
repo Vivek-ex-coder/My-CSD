@@ -18,7 +18,8 @@ export class MenuComponent implements OnInit {
     
     this.userService.loggedUser().subscribe(data =>{
       this.displayName = data;
-            });
-    }
+    });
+  }
+  
 
-}
+}       

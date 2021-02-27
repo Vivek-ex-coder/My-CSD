@@ -16,10 +16,15 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a [routerLink]="['/home']">Home</a></li>
-                <li><a [routerLink]="['/complain']">Complain</a></li>
-                <li><a [routerLink]="['/feedback']">Feedback</a></li>
-                <li><a [routerLink]="['/dashboard']">Dashboard</a></li>
+            
+                <li [routerLinkActive]="['active']"><a [routerLink]="['/home']">Home</a></li>
+
+                <li [routerLinkActive]="['active']"><a [routerLink]="['/complain']">Complain</a></li>
+
+                <li [routerLinkActive]="['active']"><a [routerLink]="['/feedback']">Feedback</a></li>
+
+                <li [routerLinkActive]="['active']"><a [routerLink]="['/dashboard']">Dashboard</a></li>
+
             </ul>
             <div class="right">
                 <h3><em>Welcome </em></h3>
