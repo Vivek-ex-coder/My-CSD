@@ -11,8 +11,51 @@
     <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample" (click)="checkBoxUse()">
             My Users</a>
 </p>
+
+<div *ngIf="initialdisplay">
+    <div *ngIf="alert1" class="alert alert-danger alert-dismissible">
+        
+        No Complains Submitted
+    </div>
+    <div class="card card-body" *ngIf="!alert1">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Customer Name</th>
+                    <th scope="col">Mail</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Product Id</th>
+                    <th scope="col">Product Address</th>
+                    <th scope="col">Contact Number</th>
+                    <th scope="col">Repair/Replace/Refund</th>
+                    <th scope="col">Complain</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let complain of complains">
+                    <th scope="row">{{complain.id}}</th>
+                    <td>{{complain.custName}}</td>
+                    <td>{{complain.mail}}</td>
+                    <td>{{complain.productName}}</td>
+                    <td>{{complain.productId}}</td>
+                    <td>{{complain.productAdress}}</td>
+                    <td>{{complain.contactNumber}}</td>
+                    <td>{{complain.repair}}</td>
+                    <td>{{complain.complain}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
 <div class="collapse" id="collapseExample" *ngIf="comp">
-    <div class="card card-body">
+    <div *ngIf="alert1" class="alert alert-danger alert-dismissible">
+        
+        No Complains Submitted
+    </div>
+    <div class="card card-body" *ngIf="!alert1">
         <table class="table">
             <thead>
                 <tr>
@@ -45,7 +88,11 @@
     </div>
 </div>
 <div class="collapse" id="collapseExample1" *ngIf="feed">
-    <div class="card card-body">
+    <div *ngIf="alert2" class="alert alert-danger alert-dismissible">
+        
+        No Feedback submitted
+    </div>
+    <div class="card card-body" *ngIf="!alert2">
         <table class="table">
             <thead>
                 <tr>
@@ -72,7 +119,11 @@
 
 
 <div class="collapse" id="collapseExample2" *ngIf="use">
-    <div class="card card-body">
+    <div *ngIf="alert3" class="alert alert-danger alert-dismissible">
+        
+        No User Registered Yet
+    </div>
+    <div class="card card-body" *ngIf="!alert3">
         <table class="table">
             <thead>
                 <tr>
