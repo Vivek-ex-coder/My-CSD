@@ -1,38 +1,30 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ComplainComponent } from './Component/complain/complain.component';
-import { DashboardComponent } from './Component/dashboard/dashboard.component';
-import { FeedbackComponent } from './Component/feedback/feedback.component';
-import { HomeComponent } from './Component/home/home.component';
-import { LoginComponent } from './Component/login/login.component';
-import { MenuComponent } from './Component/menu/menu.component';
-import { SignupComponent } from './Component/signup/signup.component';
 
 const routes: Routes = [
-  {
-    path:'home',component: HomeComponent
+  { 
+    path: 'home',loadChildren: () => import('./Component/home/home.module').then(m => m.HomeModule)
+  },
+  { 
+    path: 'login',loadChildren: () => import('./Component/login/login.module').then(m => m.LoginModule)
+  },
+  { 
+    path: 'signup',loadChildren: () => import('./Component/signup/signup.module').then(m => m.SignupModule)
+  },
+  { 
+    path: 'dashboard',loadChildren: () => import('./Component/dashboard/dashboard.module').then(m => m.DashboardModule)
+  },
+  { 
+    path: 'feedback',loadChildren: () => import('./Component/feedback/feedback.module').then(m => m.FeedbackModule)
+  },
+  { 
+    path: 'complain', loadChildren: () => import('./Component/complain/complain.module').then(m => m.ComplainModule)
+  },
+  { 
+    path: 'menu', loadChildren: () => import('./Component/menu/menu.module').then(m => m.MenuModule)
   },
   {
-    path:'login',component: LoginComponent
-  },
-  {
-    path:'menu',component: MenuComponent
-  },
-  {
-    path:'feedback',component: FeedbackComponent
-  },
-  
-  {
-    path:'complain',component:ComplainComponent
-  },
-  {
-    path:'signup',component:SignupComponent
-  },
-  {
-    path:'dashboard',component: DashboardComponent
-  },
-  {
-    path:'**',component:LoginComponent
+    path:'**',loadChildren: () => import('./Component/login/login.module').then(m => m.LoginModule)
   }
 ];
 
