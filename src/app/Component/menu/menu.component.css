@@ -1,11 +1,11 @@
 .my-navbar {
     background-color: rgb(111, 85, 228);
     border-color:rgb(66, 48, 202); 
-  } 
+} 
 
 .nav.navbar-nav li a {
       color: rgb(252, 249, 249);
-  }
+}
 
 .brandname {
     color: aliceblue;
@@ -46,17 +46,35 @@
     background-color: white;
 }
 
+#barcolor{
+    background-color: rgb(63, 46, 139);
+    /* -webkit-box-shadow: -1px 4px 26px 11px rgba(28, 110, 218, 0.75);
+    box-shadow: -1px 4px 26px 11px rgba(63, 141, 204, 0.75); */
+    border-width:2px ;
+    border-color: rgb(17, 39, 99);
+    
+}
+
+#strip1,#strip3,#strip2{
+    background-color: rgb(255, 255, 255);
+}
+
 .topnav li a:visited{ 
     color: rgb(245, 240, 240);
     background-color:rgb(45, 28, 179);
-    padding:6px 6px;
+    /* padding:6px 6px; */
 }
 
 .topnav li a:hover{
     color:rgb(7, 30, 39);
     background-color:rgb(45, 28, 179);
-    padding:15px ;
+    /* padding:15px ; */
     
+}
+
+#log{
+    bottom: 2px;
+    margin-right:5px;
 }
 
 /* @media screen and (max-width:750px) {
